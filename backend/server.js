@@ -11,7 +11,9 @@ const taskRoutes = require('./routes/taskRoute')
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
-app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:5174', 'http://localhost:3000']
+}));
 app.use('/api/tasks',taskRoutes);
 
 
